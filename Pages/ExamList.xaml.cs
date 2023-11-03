@@ -22,18 +22,39 @@ namespace DzhafarliOrkhan320P.Pages
     public partial class ExamList : Page
     {
         public static workers worker;
+        //public static Exam[] exams = { };
         public ExamList(workers w)
         {
             InitializeComponent();
             worker = w;
-        }
-        private void ListViewItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            var item = sender as ListViewItem;
-            if (item != null && item.IsSelected)
+            var dates = App.DB.exams.Where(x => x.teacher_id == w.id).GroupBy(y => y.date).Select(x => new
             {
-                //NavigationService.Navigate(new Pages.ExamInfo(sender.exam_id));
+                id=x.FirstOrDefault().id,
+                date = x.Key,
+                discipline = App.DB.disciplines.FirstOrDefault(z => z.code == x.FirstOrDefault().code).dname
             }
+            );
+
+            /*foreach (var date in dates)
+            {
+                foreach (var exam in date)
+                {
+                    Exam ex = new Exam(App.DB.disciplines.FirstOrDefault(x => x.code == exam.code).dname, date.Key.Value);
+                    exams.Add(ex);
+                    //examsLW.Items.Add(ex);
+                    break;
+                }
+            }*/
+            //examsLW.ItemsSource = exams;
+            examsLW.ItemsSource = dates.ToList();
+        }
+
+        private void examsLW_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var obj = examsLW.SelectedItem;
+            int id = Convert.ToInt32(obj.GetType().GetProperties().First(o => o.Name == "id").GetValue(obj, null));
+            var exam = App.DB.exams.FirstOrDefault(x => x.id == id);
+            NavigationService.Navigate(new ExamInfo(exam));
         }
     }
 }

@@ -35,18 +35,15 @@
         <ListView Grid.Row="1"
                   Grid.RowSpan="6"
                   Grid.Column="1"
-                  Grid.ColumnSpan="8">
+                  Grid.ColumnSpan="8"
+                  x:Name="examsLW"
+                  MouseDoubleClick="examsLW_MouseDoubleClick">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Company}" Width="100">discipine</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Price}">date</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding discipline}" Width="100">Дисциплина</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding date}">Дата</GridViewColumn>
                 </GridView>
             </ListView.View>
-            <ListView.ItemContainerStyle>
-                <Style TargetType="ListViewItem">
-                    <EventSetter Event="PreviewMouseLeftButtonDown" Handler="ListViewItem_PreviewMouseLeftButtonDown" />
-                </Style>
-            </ListView.ItemContainerStyle>
         </ListView>
     </Grid>
 </Page>

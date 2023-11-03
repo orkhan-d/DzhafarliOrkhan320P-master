@@ -54,6 +54,12 @@
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"/>
 
+        <TextBox x:Name="tabInTB"
+                 Grid.Row="1"
+                 Grid.Column="6"
+                 FontSize="16"
+                 VerticalAlignment="Center"/>
+
         <TextBlock Grid.Row="2"
                    Grid.Column="4"
                    FontSize="16"
@@ -68,15 +74,53 @@
                  FontSize="16"
                  VerticalAlignment="Center"/>
 
+        <TextBlock Grid.Row="4"
+                   Grid.Column="4"
+                   FontSize="16"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center">
+    Зарплата
+        </TextBlock>
+
+        <TextBox x:Name="salaryTB"
+                 Grid.Row="4"
+                 Grid.Column="6"
+                 FontSize="16"
+                 VerticalAlignment="Center"/>
+
         <Button x:Name="saveBtn"
                 Grid.Column="4"
                 Grid.Row="7"
                 FontSize="16"
-                Margin="0 10">Сохранить</Button>
-        <Button x:Name="delBtn"
-                Grid.Column="6"
-                Grid.Row="7"
+                Margin="0 10" Click="saveBtn_Click">Сохранить</Button>
+
+        <TextBlock Grid.Row="3"
+                   Grid.Column="4"
+                   FontSize="16"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center">
+    Код кафедры
+        </TextBlock>
+
+        <ComboBox x:Name="kafCB"
+                  Grid.Column="6"
+                Grid.Row="3"
                 FontSize="16"
-                Margin="0 10">Удалить</Button>
+                Margin="0 10"/>
+
+        <TextBlock Grid.Row="5"
+                   Grid.Column="4"
+                   FontSize="16"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center">
+    Должность
+        </TextBlock>
+
+        <ComboBox x:Name="posCB"
+                  Grid.Column="6"
+                Grid.Row="5"
+                FontSize="16"
+                Margin="0 10"/>
+
     </Grid>
 </Page>

@@ -88,7 +88,7 @@
         FontSize="20"
         VerticalAlignment="Center"
                 Margin="25 0"
-        Padding="25 5">
+        Padding="25 5" Click="guestBtn_Click">
             Гость
         </Button>
     </Grid>

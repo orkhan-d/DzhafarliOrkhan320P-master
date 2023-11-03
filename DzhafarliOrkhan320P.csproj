@@ -159,6 +159,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\DisciplinesList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\ExamInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -171,6 +175,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\SotrudsList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages\AuthorizationPage.xaml.cs">
@@ -178,6 +186,9 @@
     </Compile>
     <Compile Include="Pages\DepartamentsList.xaml.cs">
       <DependentUpon>DepartamentsList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DisciplinesList.xaml.cs">
+      <DependentUpon>DisciplinesList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ExamInfo.xaml.cs">
       <DependentUpon>ExamInfo.xaml</DependentUpon>
@@ -187,6 +198,9 @@
     </Compile>
     <Compile Include="Pages\SotrudInfo.xaml.cs">
       <DependentUpon>SotrudInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SotrudsList.xaml.cs">
+      <DependentUpon>SotrudsList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

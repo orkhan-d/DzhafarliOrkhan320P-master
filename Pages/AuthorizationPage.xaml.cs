@@ -39,19 +39,24 @@ namespace DzhafarliOrkhan320P.Pages
                 switch (user.wpos)
                 {
                     case "зав. кафедрой":
-                        NavigationService.Navigate(new DepartamentsList(true));
+                        NavigationService.Navigate(new DepartamentsList());
                         break;
                     case "преподаватель":
                         NavigationService.Navigate(new ExamList(user));
                         break;
                     case "инженер":
-                        NavigationService.Navigate(new DepartamentsList(true));
+                        NavigationService.Navigate(new SotrudsList());
                         break;
                     default:
                         break;
                 }
                 MessageBox.Show($"Вы {user.wpos}!");
             }
+        }
+
+        private void guestBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new DisciplinesList(null));
         }
     }
 }
