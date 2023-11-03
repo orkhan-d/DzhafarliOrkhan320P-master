@@ -1,0 +1,82 @@
+﻿<Page x:Class="DzhafarliOrkhan320P.Pages.SotrudInfo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DzhafarliOrkhan320P.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SotrudInfo">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Image Grid.Column="1"
+               Grid.ColumnSpan="2"
+               Grid.Row="1"
+               Grid.RowSpan="4"
+               x:Name="sotrudimage"/>
+
+        <TextBlock Grid.Row="1"
+                   Grid.Column="4"
+                   FontSize="16"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center">
+            Табельный №
+        </TextBlock>
+
+        <TextBlock x:Name="tabNTB"
+                   Grid.Row="1"
+                   Grid.Column="6"
+                   FontSize="16"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
+
+        <TextBlock Grid.Row="2"
+                   Grid.Column="4"
+                   FontSize="16"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center">
+    Фамилия
+        </TextBlock>
+
+        <TextBox x:Name="surnameTB"
+                 Grid.Row="2"
+                 Grid.Column="6"
+                 FontSize="16"
+                 VerticalAlignment="Center"/>
+
+        <Button x:Name="saveBtn"
+                Grid.Column="4"
+                Grid.Row="7"
+                FontSize="16"
+                Margin="0 10">Сохранить</Button>
+        <Button x:Name="delBtn"
+                Grid.Column="6"
+                Grid.Row="7"
+                FontSize="16"
+                Margin="0 10">Удалить</Button>
+    </Grid>
+</Page>
