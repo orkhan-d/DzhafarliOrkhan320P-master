@@ -28,7 +28,8 @@ namespace DzhafarliOrkhan320P.Pages
             InitializeComponent();
             if(w is null)
             {
-
+                surnameTB.Text = "";
+                salaryTB.Text = "";
             }
             else
             {
@@ -37,6 +38,8 @@ namespace DzhafarliOrkhan320P.Pages
                 kafCB.SelectedItem = w.kafedra_code;
                 posCB.SelectedItem = w.wpos;
             }
+            kafCB.ItemsSource = App.DB.kafedras.toList().Select(x => x.code);
+            posCB.ItemsSource = App.DB.workers.GroupBy(x => x.wpos).toList(x => x.Key);
         }
 
         private void saveBtn_Click(object sender, RoutedEventArgs e)
@@ -59,6 +62,15 @@ namespace DzhafarliOrkhan320P.Pages
 
                     });
                 }
+                else
+                {
+                    ww.fio = surnameTB.Text;
+                    ww.kafedra_code = kafCB.Text;
+                    ww.wpos = posCB.Text;
+                    ww.salary = Convert.ToInt32(salaryTB.Text);
+                }
+                App.DB.SaveChanges();
+                NavigationService.Navigate(new SotrudsList());
             }
         }
     }

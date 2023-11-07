@@ -30,7 +30,7 @@ namespace DzhafarliOrkhan320P.Pages
         private void DiscsLW_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             workers disc = (workers)DiscsLW.SelectedItems;
-            NavigationService.Navigate(new SotrudInfo());
+            NavigationService.Navigate(new SotrudInfo(disc));
         }
 
         private void delBtn_Click(object sender, RoutedEventArgs e)
